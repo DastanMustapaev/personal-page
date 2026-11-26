@@ -113,6 +113,24 @@ Object.assign(additions.KG.form, {
   requestNote: 'Команданын каалаган мүчөсүнө суроо жөнөтө аласыз. УЗИ, физиотерапия жана дуланын кызматтары адегенде дарыгер менен талкууланат; бул форма суроо жөнөтөт, кабыл алууну ырастабайт.',
   requestDoctor: 'Дарыгерге жазылуу'
 });
+Object.assign(additions.EN.contact, {
+  phone: '+996 770 231 813',
+  email: 'medicalcenter@mercymed.kg',
+  whatsapp: 'WhatsApp',
+  instagram: '@mercymed.kg'
+});
+Object.assign(additions.RU.contact, {
+  phone: '+996 770 231 813',
+  email: 'medicalcenter@mercymed.kg',
+  whatsapp: 'WhatsApp',
+  instagram: '@mercymed.kg'
+});
+Object.assign(additions.KG.contact, {
+  phone: '+996 770 231 813',
+  email: 'medicalcenter@mercymed.kg',
+  whatsapp: 'WhatsApp',
+  instagram: '@mercymed.kg'
+});
 Object.assign(additions.EN.team, {
   intro: 'Meet MercyMed’s clinicians and care team, with specialties and background from the clinic’s materials.',
   note: 'The client materials do not specify years of experience for most clinicians. They mention a receptionist who coordinates requests, but do not name them; contact MercyMed to confirm current experience and language availability.',
