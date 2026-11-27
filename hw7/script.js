@@ -145,8 +145,7 @@ Object.assign(additions.KG.contact, {
 });
 Object.assign(additions.EN.team, {
   intro: 'Meet MercyMed’s clinicians and care team, with specialties and background from the clinic’s materials.',
-  note: 'The client materials do not specify years of experience for most clinicians. They mention a receptionist who coordinates requests, but do not name them; contact MercyMed to confirm current experience and language availability.',
-  languageNote: 'The clinic interview lists Kyrgyz, Russian and English; Nancy Yau speaks Chinese, and Lukas Meyer-Landholt speaks German and French.',
+  languageNote: 'Languages: Kyrgyz, Russian, and English. Nancy Yau also speaks Chinese, and Lukas Meyer-Landholt speaks German and French.',
   m1Role: 'Nurse / Director / Doula',
   m1Bio: 'Kyrgyz nurse, clinic director and doula. Helped start MercyMed’s mobile-clinic work with Jonathan over 10 years ago.',
   m2Bio: 'Chief doctor and pediatrician. Helped start MercyMed’s mobile-clinic work with Mahabat over 10 years ago.',
@@ -161,8 +160,7 @@ Object.assign(additions.EN.team, {
 });
 Object.assign(additions.RU.team, {
   intro: 'Врачи и специалисты MercyMed: направления и сведения из материалов клиники.',
-  note: 'В материалах не указаны годы опыта большинства специалистов. Упоминается администратор, который координирует запросы, но его имя не приводится. Уточните у MercyMed актуальный опыт специалистов и доступные языки.',
-  languageNote: 'В интервью названы кыргызский, русский и английский языки; Nancy Yau говорит по-китайски, а Lukas Meyer-Landholt — по-немецки и по-французски.',
+  languageNote: 'Языки: кыргызский, русский и английский. Nancy Yau также говорит по-китайски, а Lukas Meyer-Landholt — по-немецки и по-французски.',
   m1Role: 'Медсестра / директор / доула',
   m1Bio: 'Медсестра из Кыргызстана, директор клиники и доула. Более 10 лет назад вместе с Jonathan начала работу мобильных клиник MercyMed.',
   m2Bio: 'Главный врач и педиатр. Более 10 лет назад вместе с Mahabat начал работу мобильных клиник MercyMed.',
@@ -177,8 +175,7 @@ Object.assign(additions.RU.team, {
 });
 Object.assign(additions.KG.team, {
   intro: 'MercyMed дарыгерлери жана кам көрүү командасы: клиниканын материалдарындагы адистиктер жана маалыматтар.',
-  note: 'Материалдарда көпчүлүк адистердин иш тажрыйбасынын жылдары көрсөтүлгөн эмес. Суроо-талаптарды координациялаган администратор айтылат, бирок аты көрсөтүлгөн эмес. Учурдагы тажрыйба жана тилдер тууралуу MercyMedден тактаңыз.',
-  languageNote: 'Маекте кыргыз, орус жана англис тилдери айтылган; Nancy Yau кытайча, Lukas Meyer-Landholt немисче жана французча сүйлөйт.',
+  languageNote: 'Тилдер: кыргызча, орусча жана англисче. Nancy Yau кытайча, ал эми Lukas Meyer-Landholt немисче жана французча сүйлөйт.',
   m1Role: 'Медайым / директор / дула',
   m1Bio: 'Кыргызстандык медайым, клиниканын директору жана дула. MercyMedдин көчмө клиникаларын Jonathan менен 10 жылдан ашык убакыт мурун баштаган.',
   m2Bio: 'Башкы дарыгер жана педиатр. MercyMedдин көчмө клиникаларын Mahabat менен 10 жылдан ашык убакыт мурун баштаган.',
