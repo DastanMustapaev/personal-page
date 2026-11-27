@@ -229,6 +229,23 @@ const form = document.querySelector('#appointment-form');
 const formMessage = document.querySelector('#form-message');
 const birthdateInput = document.querySelector('#birthdate');
 const doctorSelect = document.querySelector('#doctor');
+const nameInputs = form?.querySelectorAll('#name, #surname') ?? [];
+const invalidNameCharacters = /[^\p{L}\p{M} '\u2019-]/gu;
+
+nameInputs.forEach((input) => {
+  input.addEventListener('input', () => {
+    const cursorPosition = input.selectionStart;
+    const cleanedValue = input.value.replace(invalidNameCharacters, '');
+    if (cleanedValue !== input.value) {
+      const cleanedCursorPosition = input.value
+        .slice(0, cursorPosition)
+        .replace(invalidNameCharacters, '').length;
+      input.value = cleanedValue;
+      input.setSelectionRange(cleanedCursorPosition, cleanedCursorPosition);
+    }
+  });
+});
+
 document.querySelectorAll('[data-booking-doctor]').forEach((link) => {
   link.addEventListener('click', () => {
     if (doctorSelect) doctorSelect.value = link.dataset.bookingDoctor;
