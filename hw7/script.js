@@ -311,17 +311,13 @@ document.querySelectorAll('[data-booking-doctor]').forEach((link) => {
 });
 const today = new Date();
 const todayString = `${today.getFullYear()}-${String(today.getMonth() + 1).padStart(2, '0')}-${String(today.getDate()).padStart(2, '0')}`;
-const recentYears = document.createElement('optgroup');
-recentYears.label = `2000–${today.getFullYear()}`;
-const earlierYears = document.createElement('optgroup');
-earlierYears.label = '1900–1999';
-for (let year = 2000; year <= today.getFullYear(); year += 1) {
-  recentYears.append(new Option(String(year), String(year)));
+const selectYearOption = birthYearInput?.options[0];
+for (let year = 1900; year <= today.getFullYear(); year += 1) {
+  birthYearInput?.append(new Option(String(year), String(year)));
+  if (year === 2000 && selectYearOption) {
+    birthYearInput.append(selectYearOption);
+  }
 }
-for (let year = 1999; year >= 1900; year -= 1) {
-  earlierYears.append(new Option(String(year), String(year)));
-}
-birthYearInput?.append(recentYears, earlierYears);
 
 function populateBirthdateMonths() {
   if (!birthMonthInput) return;
