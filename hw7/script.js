@@ -115,15 +115,27 @@ Object.assign(additions.KG.form, {
 });
 Object.assign(additions.EN.form, {
   year: 'Year', month: 'Month', day: 'Day',
-  selectYear: 'Select year', selectMonth: 'Select month', selectDay: 'Select day'
+  selectYear: 'Select year', selectMonth: 'Select month', selectDay: 'Select day',
+  surname: "Patient's surname <span>*</span>",
+  name: "Patient's name <span>*</span>",
+  birthdate: "Patient's date of birth <span>*</span>",
+  childBookingNote: "Booking for a child? Enter the child's name and date of birth, and your phone number."
 });
 Object.assign(additions.RU.form, {
   year: 'Год', month: 'Месяц', day: 'День',
-  selectYear: 'Выберите год', selectMonth: 'Выберите месяц', selectDay: 'Выберите день'
+  selectYear: 'Выберите год', selectMonth: 'Выберите месяц', selectDay: 'Выберите день',
+  surname: 'Фамилия пациента <span>*</span>',
+  name: 'Имя пациента <span>*</span>',
+  birthdate: 'Дата рождения пациента <span>*</span>',
+  childBookingNote: 'Записываете ребёнка? Укажите имя и дату рождения ребёнка, а также свой номер телефона.'
 });
 Object.assign(additions.KG.form, {
   year: 'Жыл', month: 'Ай', day: 'Күн',
-  selectYear: 'Жылды тандаңыз', selectMonth: 'Айды тандаңыз', selectDay: 'Күндү тандаңыз'
+  selectYear: 'Жылды тандаңыз', selectMonth: 'Айды тандаңыз', selectDay: 'Күндү тандаңыз',
+  surname: 'Бейтаптын фамилиясы <span>*</span>',
+  name: 'Бейтаптын аты <span>*</span>',
+  birthdate: 'Бейтаптын туулган күнү <span>*</span>',
+  childBookingNote: 'Балага жазылып жатасызбы? Баланын атын жана туулган күнүн, ошондой эле өзүңүздүн телефон номериңизди жазыңыз.'
 });
 Object.assign(additions.EN.contact, {
   phone: '+996 770 231 813',
