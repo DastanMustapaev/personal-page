@@ -57,6 +57,7 @@ const additions = {
     services: { dailyText: 'Adult and pediatric consultations in one centre.', specialists: 'Choose a specialist to preselect them in your appointment request:', preventiveSpecialists: 'For growth and development checks, start with a pediatric consultation; for adult check-ups, choose family medicine or internal medicine. The team will advise which tests are right for you.', ultrasoundBy: 'Ultrasound:', birthPreparationBy: 'birth preparation:', physicalTherapyBy: 'physical therapy:', additionalRouting: 'Additional services are not booked directly. First request a doctor consultation; the doctor will advise you and help arrange the appropriate service.' },
     about: { mobile: 'Mobile clinics · the heart of MercyMed', years: 'Years of mobile outreach', yearsText: 'Charitable clinics have brought medical support to communities across different regions.', opened: 'Bishkek clinic opened', openedText: 'An outpatient centre for families, local residents and international visitors.' },
     team: { note: 'MercyMed team profiles.', m1Role: 'Director / Doula', m1Bio: 'Supporting families from preparation to care.', m2Role: 'Chief Doctor / Pediatrics', m2Bio: 'Care for children and their families.', m3Role: 'Pediatrics / Family Medicine', m3Bio: 'Whole-family care across every stage.', m4Role: 'Internal Medicine / Pulmonology', m4Bio: 'Thoughtful care for lasting health.', m5Role: 'Pediatric / Intensivist', m5Bio: 'Calm, attentive pediatric expertise.', m6Role: 'Pediatrics', m6Bio: 'Helping young patients feel at ease.', m7Role: 'Pediatrics / Oncology', m7Bio: 'International experience, close to home.', m8Role: 'Physical Therapist', m8Bio: 'Supporting movement and recovery.', m9Role: 'Gynecology', m9Bio: "Respectful care for women's health.", m10Role: 'Ultrasound', m10Bio: 'Clear imaging for confident next steps.' },
+    info: { title: 'Clinic information', address: 'Address', addressValue: 'Tunguch microdistrict, near Ayu Grand, Bishkek.', openingHours: 'Doctor availability', availabilityNote: 'See weekly doctor schedule below', phoneWhatsapp: 'Phone / WhatsApp', call: 'Call', whatsapp: 'WhatsApp', clockIcon: 'Clock', todayHours: "Today's doctor schedule", contactForHours: 'These are doctor appointment times. Please contact us to confirm clinic opening hours.', day: 'Day', hours: 'Doctor hours', notConfirmed: 'Not listed', closed: 'Closed', today: 'Today', days: { monday: 'Monday', tuesday: 'Tuesday', wednesday: 'Wednesday', thursday: 'Thursday', friday: 'Friday', saturday: 'Saturday', sunday: 'Sunday' } },
     form: { surname: 'Surname <span>*</span>', name: 'Name <span>*</span>', birthdate: 'Date of birth <span>*</span>', phone: 'Phone number <span>*</span>', doctor: 'Preferred doctor or consultation', choose: 'Choose an option', adult: 'General adult consultation', pediatric: 'General pediatric consultation', jonathan: 'Jonathan Williams — Pediatrics', irina: 'Irina Pak — Family Medicine', nasyikat: 'Nasyikat Dononbaeva — Internal Medicine / Pulmonology', nabat: 'Nabat Gasimova — Pediatrics / Intensivist', nancy: 'Nancy Yau — Pediatrics', lukas: 'Lukas Meyer-Landholt — Pediatrics / Oncology', simbat: 'Simbat Sadyrbaeva — Gynecology', other: 'Other / not sure yet', preview: 'Continue to WhatsApp <span aria-hidden="true">↗</span>', missing: { surname: 'Please enter your surname.', name: 'Please enter your name.', birthdate: 'Please enter your date of birth.', phone: 'Please enter your phone number.' }, invalidDate: 'Please enter a valid date of birth.', futureDate: 'Date of birth cannot be in the future.', invalidPhone: 'Please enter a valid phone number, for example +996 770 231 813.', doctorDefault: 'General consultation', awaitingReview: 'Request ready', awaitingReviewText: 'WhatsApp will open with a prepared message for MercyMed.', whatsappMessage: 'Hello MercyMed, I would like to request an appointment.%0AName: {name} {surname}%0ADate of birth: {birthdate}%0APhone: {phone}%0AConsultation: {doctor}' },
     contact: { phone: '☎ Call MercyMed: +996 770 231 813', email: '✉ Email MercyMed: medicalcenter@mercymed.kg', whatsapp: '▣ Chat with MercyMed on WhatsApp', instagram: 'Follow us on Instagram', instagramText: '@mercymed.kg · See updates and news', locationTitle: 'Find MercyMed', digisTitle: '2GIS location', openGoogle: 'Open Google Maps ↗', open2gis: 'Open 2GIS ↗' },
     footer: { tagline: 'Evidence-based care for the whole family.', note: '© 2026 MercyMed' }
@@ -69,6 +70,7 @@ const additions = {
     services: { dailyText: 'Консультации для взрослых и детей в одном центре.', specialists: 'Выберите специалиста — его имя появится в запросе на приём:', preventiveSpecialists: 'Для оценки роста и развития начните с консультации педиатра. Для взрослых выберите семейную медицину или терапию. Команда подскажет, какие обследования подойдут.', ultrasoundBy: 'УЗИ:', birthPreparationBy: 'подготовка к родам:', physicalTherapyBy: 'физиотерапия:', additionalRouting: 'Дополнительные услуги нельзя забронировать напрямую. Сначала запросите консультацию врача — он подскажет, какая услуга подойдёт, и поможет её организовать.' },
     about: { mobile: 'Мобильные клиники · сердце MercyMed', years: 'Лет мобильной помощи', yearsText: 'Благотворительные клиники помогают людям в разных регионах.', opened: 'Клиника в Бишкеке открылась', openedText: 'Амбулаторный центр для семей, жителей города и иностранных гостей.' },
     team: { note: 'Профили команды MercyMed.', m1Role: 'Директор / доула', m1Bio: 'Поддержка семей от подготовки до лечения.', m2Role: 'Главный врач / педиатрия', m2Bio: 'Помощь детям и их семьям.', m3Role: 'Педиатрия / семейная медицина', m3Bio: 'Помощь всей семье на каждом этапе.', m4Role: 'Терапия / пульмонология', m4Bio: 'Внимательная забота о здоровье.', m5Role: 'Педиатр / реаниматолог', m5Bio: 'Спокойная и внимательная помощь детям.', m6Role: 'Педиатрия', m6Bio: 'Помогаем маленьким пациентам чувствовать себя спокойно.', m7Role: 'Педиатрия / онкология', m7Bio: 'Международный опыт рядом с вами.', m8Role: 'Физиотерапевт', m8Bio: 'Поддержка движения и восстановления.', m9Role: 'Гинекология', m9Bio: 'Бережная забота о женском здоровье.', m10Role: 'УЗИ', m10Bio: 'Понятная диагностика для уверенных следующих шагов.' },
+    info: { title: 'Информация о клинике', address: 'Адрес', addressValue: 'Микрорайон Тунгуч, рядом с Ayu Grand, Бишкек.', openingHours: 'Расписание врачей', availabilityNote: 'Смотрите расписание врачей на неделю ниже', phoneWhatsapp: 'Телефон / WhatsApp', call: 'Позвонить', whatsapp: 'WhatsApp', clockIcon: 'Часы', todayHours: 'Расписание врачей на сегодня', contactForHours: 'Это время приёма врачей. Чтобы уточнить часы работы клиники, свяжитесь с нами.', day: 'День', hours: 'Время приёма', notConfirmed: 'Не указано', closed: 'Закрыто', today: 'Сегодня', days: { monday: 'Понедельник', tuesday: 'Вторник', wednesday: 'Среда', thursday: 'Четверг', friday: 'Пятница', saturday: 'Суббота', sunday: 'Воскресенье' } },
     form: { surname: 'Фамилия <span>*</span>', name: 'Имя <span>*</span>', birthdate: 'Дата рождения <span>*</span>', phone: 'Номер телефона <span>*</span>', doctor: 'Предпочтительный врач или консультация', choose: 'Выберите вариант', adult: 'Общая консультация для взрослых', pediatric: 'Общая консультация для детей', jonathan: 'Jonathan Williams — педиатрия', irina: 'Irina Pak — семейная медицина', nasyikat: 'Nasyikat Dononbaeva — терапия / пульмонология', nabat: 'Nabat Gasimova — педиатр / реаниматолог', nancy: 'Nancy Yau — педиатрия', lukas: 'Lukas Meyer-Landholt — педиатрия / онкология', simbat: 'Simbat Sadyrbaeva — гинекология', other: 'Другое / пока не уверены', preview: 'Перейти в WhatsApp <span aria-hidden="true">↗</span>', missing: { surname: 'Введите фамилию.', name: 'Введите имя.', birthdate: 'Введите дату рождения.', phone: 'Введите номер телефона.' }, invalidDate: 'Введите корректную дату рождения.', futureDate: 'Дата рождения не может быть в будущем.', invalidPhone: 'Введите корректный номер телефона, например +996 770 231 813.', doctorDefault: 'Общая консультация', awaitingReview: 'Запрос готов', awaitingReviewText: 'WhatsApp откроется с подготовленным сообщением для MercyMed.', whatsappMessage: 'Здравствуйте, MercyMed! Хочу записаться на приём.%0AИмя: {name} {surname}%0AДата рождения: {birthdate}%0AТелефон: {phone}%0AКонсультация: {doctor}' },
     contact: { phone: '☎ Позвонить в MercyMed: +996 770 231 813', email: '✉ Написать MercyMed: medicalcenter@mercymed.kg', whatsapp: '▣ Написать в WhatsApp', instagram: 'Мы в Instagram', instagramText: '@mercymed.kg · Новости и обновления', locationTitle: 'Найти MercyMed', digisTitle: 'Расположение в 2GIS', openGoogle: 'Открыть Google Maps ↗', open2gis: 'Открыть 2GIS ↗' },
     footer: { tagline: 'Доказательная медицина для всей семьи.', note: '© 2026 MercyMed, прототип · Ничего не отправляется.' }
@@ -81,6 +83,7 @@ const additions = {
     services: { dailyText: 'Чоңдорго жана балдарга бир борбордо кеңеш берилет.', specialists: 'Адисти тандасаңыз, анын аты кабыл алуу сурооңузга кошулат:', preventiveSpecialists: 'Өсүү жана өнүгүүнү текшерүү үчүн педиатрга кайрылыңыз; чоңдор үй-бүлөлүк медицина же ички оорулар дарыгерин тандай алышат. Команда ылайыктуу текшерүүлөрдү сунуштайт.', ultrasoundBy: 'УЗИ:', birthPreparationBy: 'төрөткө даярдык:', physicalTherapyBy: 'физиотерапия:', additionalRouting: 'Кошумча кызматтарды түздөн-түз жаздырууга болбойт. Адегенде дарыгердин кеңешине суроо жөнөтүңүз; дарыгер ылайыктуу кызматты сунуштап, аны уюштурууга жардам берет.' },
     about: { mobile: 'Мобилдик клиникалар · MercyMedдин жүрөгү', years: 'Мобилдик жардамдын жылдары', yearsText: 'Кайрымдуулук клиникалары ар кайсы аймактардагы адамдарга жардам берди.', opened: 'Бишкек клиникасы ачылды', openedText: 'Үй-бүлөлөр, жергиликтүү тургундар жана чет элдик коноктор үчүн амбулатордук борбор.' },
     team: { note: 'MercyMed командасынын профилдери.', m1Role: 'Директор / дула', m1Bio: 'Үй-бүлөлөргө даярдыктан кам көрүүгө чейин колдоо.', m2Role: 'Башкы дарыгер / педиатрия', m2Bio: 'Балдарга жана алардын үй-бүлөлөрүнө жардам.', m3Role: 'Педиатрия / үй-бүлөлүк медицина', m3Bio: 'Ар бир этапта бүт үй-бүлөгө жардам.', m4Role: 'Ички оорулар / пульмонология', m4Bio: 'Ден соолукка көңүл бурулган кам көрүү.', m5Role: 'Педиатр / реаниматолог', m5Bio: 'Балдарга тынч жана кылдат жардам.', m6Role: 'Педиатрия', m6Bio: 'Кичинекей бейтаптарга өзүн эркин сезүүгө жардам беребиз.', m7Role: 'Педиатрия / онкология', m7Bio: 'Эл аралык тажрыйба сизге жакын.', m8Role: 'Физиотерапевт', m8Bio: 'Кыймылга жана калыбына келүүгө колдоо.', m9Role: 'Гинекология', m9Bio: 'Аялдардын ден соолугуна сый мамиле.', m10Role: 'УЗИ', m10Bio: 'Кийинки кадамды ишенимдүү тандоо үчүн так сүрөттөө.' },
+    info: { title: 'Клиника жөнүндө маалымат', address: 'Дарек', addressValue: 'Тунгуч кичи району, Ayu Grand жанында, Бишкек.', openingHours: 'Дарыгерлердин кабыл алуу убактысы', availabilityNote: 'Дарыгерлердин жумалык графигин төмөндөн караңыз', phoneWhatsapp: 'Телефон / WhatsApp', call: 'Чалуу', whatsapp: 'WhatsApp', clockIcon: 'Саат', todayHours: 'Бүгүнкү дарыгерлердин графиги', contactForHours: 'Бул дарыгерлердин кабыл алуу убактысы. Клиниканын иш убактысын тактоо үчүн биз менен байланышыңыз.', day: 'Күн', hours: 'Кабыл алуу убактысы', notConfirmed: 'Көрсөтүлгөн эмес', closed: 'Жабык', today: 'Бүгүн', days: { monday: 'Дүйшөмбү', tuesday: 'Шейшемби', wednesday: 'Шаршемби', thursday: 'Бейшемби', friday: 'Жума', saturday: 'Ишемби', sunday: 'Жекшемби' } },
     form: { surname: 'Фамилия <span>*</span>', name: 'Аты <span>*</span>', birthdate: 'Туулган күнү <span>*</span>', phone: 'Телефон номери <span>*</span>', doctor: 'Каалаган дарыгер же кеңеш', choose: 'Вариантты тандаңыз', adult: 'Чоңдор үчүн жалпы кеңеш', pediatric: 'Балдар үчүн жалпы кеңеш', jonathan: 'Jonathan Williams — педиатрия', irina: 'Irina Pak — үй-бүлөлүк медицина', nasyikat: 'Nasyikat Dononbaeva — ички оорулар / пульмонология', nabat: 'Nabat Gasimova — педиатр / реаниматолог', nancy: 'Nancy Yau — педиатрия', lukas: 'Lukas Meyer-Landholt — педиатрия / онкология', simbat: 'Simbat Sadyrbaeva — гинекология', other: 'Башка / азырынча билбейм', preview: 'WhatsAppка өтүү <span aria-hidden="true">↗</span>', missing: { surname: 'Фамилияңызды жазыңыз.', name: 'Атыңызды жазыңыз.', birthdate: 'Туулган күнүңүздү жазыңыз.', phone: 'Телефон номериңизди жазыңыз.' }, invalidDate: 'Туулган күнүңүздү туура жазыңыз.', futureDate: 'Туулган күн келечекте боло албайт.', invalidPhone: 'Телефон номериңизди туура жазыңыз, мисалы +996 770 231 813.', doctorDefault: 'Жалпы кеңеш', awaitingReview: 'Суроо даяр', awaitingReviewText: 'WhatsApp MercyMed үчүн даярдалган билдирүү менен ачылат.', whatsappMessage: 'Саламатсызбы, MercyMed! Кабыл алууга жазылгым келет.%0AАты-жөнү: {name} {surname}%0AТуулган күнү: {birthdate}%0AТелефон: {phone}%0AКеңеш: {doctor}' },
     contact: { phone: '☎ MercyMedге чалуу: +996 770 231 813', email: '✉ MercyMedге жазуу: medicalcenter@mercymed.kg', whatsapp: '▣ WhatsApp аркылуу жазуу', instagram: 'Биз Instagramдабыз', instagramText: '@mercymed.kg · Жаңылыктар жана маалымат', locationTitle: 'MercyMedди табыңыз', digisTitle: '2GISтеги жайгашкан жер', openGoogle: 'Google Maps ачуу ↗', open2gis: '2GIS ачуу ↗' },
     footer: { tagline: 'Бүт үй-бүлө үчүн далилдерге негизделген медицина.', note: '© 2026 MercyMed, прототип · Эч нерсе жөнөтүлбөйт.' }
@@ -204,9 +207,70 @@ Object.keys(additions).forEach((language) => {
   Object.keys(additions[language]).forEach((section) => Object.assign(translations[language][section] ||= {}, additions[language][section]));
 });
 
+const clinicInfo = {
+  // Doctor availability transcribed from the supplied image; this is not the clinic-wide opening schedule.
+  weeklyHours: {
+    monday: { open: '09:00', close: '17:00' },
+    tuesday: { open: '09:00', close: '17:00' },
+    wednesday: { open: '09:00', close: '17:00' },
+    thursday: { open: '09:00', close: '17:00' },
+    friday: { open: '08:30', close: '17:00' },
+    saturday: null,
+    sunday: null
+  }
+};
+
 const getValue = (language, key) => key.split('.').reduce((value, part) => value?.[part], translations[language]);
 const savedLanguage = localStorage.getItem('mercymed-language');
 let currentLanguage = translations[savedLanguage] ? savedLanguage : 'EN';
+
+function renderOpeningHours() {
+  const schedule = document.querySelector('#opening-hours-schedule');
+  if (!schedule) return;
+
+  const today = new Intl.DateTimeFormat('en-US', {
+    weekday: 'long',
+    timeZone: 'Asia/Bishkek'
+  }).format(new Date()).toLowerCase();
+  const { days, notConfirmed, closed, today: todayLabel } = translations[currentLanguage].info;
+  const dayKeys = Object.keys(days);
+
+  schedule.replaceChildren(...dayKeys.map((day) => {
+    const row = document.createElement('tr');
+    const isWeekend = day === 'saturday' || day === 'sunday';
+    const isToday = day === today;
+    row.classList.add(isWeekend ? 'weekend' : 'weekday');
+    if (isToday) {
+      row.classList.add('today');
+      row.setAttribute('aria-current', 'date');
+    }
+
+    const dayCell = document.createElement('th');
+    dayCell.scope = 'row';
+    dayCell.textContent = days[day];
+    if (isToday) {
+      const badge = document.createElement('span');
+      badge.className = 'hours-today-badge';
+      badge.textContent = todayLabel;
+      dayCell.append(badge);
+    }
+
+    const hoursCell = document.createElement('td');
+    const hours = clinicInfo.weeklyHours[day];
+    if (hours === 'closed') {
+      hoursCell.textContent = closed;
+      hoursCell.classList.add('hours-closed');
+    } else if (hours
+      && /^\d{2}:\d{2}$/.test(hours.open)
+      && /^\d{2}:\d{2}$/.test(hours.close)) {
+      hoursCell.textContent = `${hours.open}–${hours.close}`;
+    } else {
+      hoursCell.textContent = notConfirmed;
+    }
+    row.append(dayCell, hoursCell);
+    return row;
+  }));
+}
 
 function updateLanguage(language) {
   currentLanguage = translations[language] ? language : 'EN';
@@ -216,6 +280,7 @@ function updateLanguage(language) {
     const value = getValue(currentLanguage, element.dataset.i18n);
     if (value !== undefined) element.innerHTML = value;
   });
+  renderOpeningHours();
   populateBirthdateMonths();
   document.querySelectorAll('[data-translation-badge]').forEach((badge) => {
     badge.textContent = translations[currentLanguage].badge;

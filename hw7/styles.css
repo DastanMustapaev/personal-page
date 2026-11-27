@@ -42,6 +42,34 @@ footer{background:var(--dark);border-top-color:var(--dark);color:#fff}
 .map-link:hover{border-color:var(--orange-dark)}
 @media(max-width:720px){.mobile-cta{display:block}.menu-toggle{margin-left:auto}.brand-art{height:350px}.portrait-art{height:130px}}
 @media(max-width:720px){.map-frame{height:340px}.map-links{display:grid;grid-template-columns:1fr 1fr}.map-link{padding:10px 8px;font-size:.78rem}}
+.clinic-info-strip{padding:22px 0;background:#fff;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.clinic-info-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));list-style:none;padding:0;margin:0}
+.clinic-info-item{display:flex;align-items:flex-start;gap:14px;min-width:0;padding:8px 22px}
+.clinic-info-item:first-child{padding-left:0}
+.clinic-info-item+.clinic-info-item{border-left:1px solid var(--line)}
+.clinic-info-icon{width:24px;height:24px;flex:0 0 24px;fill:none;stroke:var(--orange-dark);stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.clinic-info-item h3{margin:0 0 4px;color:var(--muted);font-size:.72rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase}
+.clinic-info-item p{margin:0;color:var(--ink);font-size:.86rem}
+.clinic-info-contacts{display:flex;flex-wrap:wrap;gap:6px 14px}
+.clinic-info-contacts a{color:var(--dark);font-size:.84rem;font-weight:700;text-decoration:underline;text-decoration-color:#c8d2cc;text-underline-offset:3px}
+.clinic-info-contacts a:hover{color:var(--orange-dark)}
+.opening-hours-card{margin-top:24px;padding:20px;border:1px solid var(--line);border-radius:12px;background:#fff}
+.opening-hours-heading{display:flex;align-items:center;gap:11px}
+.opening-hours-heading h3{margin:0;font-family:var(--serif);font-size:1.15rem}
+.opening-hours-notice{display:grid;gap:3px;margin:17px 0 12px;padding:12px 14px;border-left:3px solid var(--orange-dark);border-radius:0 7px 7px 0;background:var(--mint);font-size:.78rem}
+.opening-hours-notice strong{color:var(--dark)}
+.opening-hours-table{width:100%;border-collapse:collapse;font-size:.8rem}
+.opening-hours-table th,.opening-hours-table td{padding:8px 10px;border-bottom:1px solid var(--line);text-align:left}
+.opening-hours-table thead th{color:var(--muted);font-size:.68rem;letter-spacing:.06em;text-transform:uppercase}
+.opening-hours-table tbody th{font-weight:600}
+.opening-hours-table tbody td{text-align:right;color:var(--muted)}
+.opening-hours-table tbody tr.weekend{background:#fff8e9}
+.opening-hours-table tbody tr.today{background:#e7f0e9;box-shadow:inset 3px 0 var(--orange-dark)}
+.opening-hours-table tbody tr.today td{color:var(--dark);font-weight:700}
+.hours-today-badge{display:inline-block;margin-left:8px;padding:2px 6px;border-radius:999px;background:var(--dark);color:#fff;font-size:.62rem;font-weight:700;vertical-align:1px}
+.opening-hours-table tbody td.hours-closed{color:#7a2c21;font-weight:700}
+@media(max-width:900px){.clinic-info-item{padding-right:14px;padding-left:14px}.clinic-info-grid{grid-template-columns:repeat(2,minmax(0,1fr));row-gap:12px}.clinic-info-item:nth-child(3){grid-column:1/-1;padding-left:14px;border-left:0;border-top:1px solid var(--line);padding-top:16px}}
+@media(max-width:720px){.clinic-info-strip{padding:14px 0}.clinic-info-grid{grid-template-columns:1fr;gap:0}.clinic-info-item,.clinic-info-item:first-child,.clinic-info-item:nth-child(3){grid-column:auto;padding:13px 4px;border:0}.clinic-info-item+.clinic-info-item{border-top:1px solid var(--line)}.opening-hours-card{padding:16px}.opening-hours-table th,.opening-hours-table td{padding:8px 6px}}
 .visually-hidden{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
 .birthdate-fields{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px}
 .birthdate-fields select{min-width:0;padding:11px 8px}

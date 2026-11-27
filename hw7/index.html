@@ -65,6 +65,26 @@
         </div>
       </section>
 
+      <section class="clinic-info-strip" aria-labelledby="clinic-info-title">
+        <div class="container">
+          <h2 id="clinic-info-title" class="visually-hidden" data-i18n="info.title">Clinic information</h2>
+          <ul class="clinic-info-grid">
+            <li class="clinic-info-item">
+              <svg class="clinic-info-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 10c0 5-8 12-8 12S4 15 4 10a8 8 0 1 1 16 0Z"/><circle cx="12" cy="10" r="2.5"/></svg>
+              <div><h3 data-i18n="info.address">Address</h3><p data-i18n="info.addressValue">Tunguch microdistrict, near Ayu Grand, Bishkek.</p></div>
+            </li>
+            <li class="clinic-info-item">
+              <svg class="clinic-info-icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
+              <div><h3 data-i18n="info.openingHours">Doctor availability</h3><p data-i18n="info.availabilityNote">See weekly doctor schedule below</p></div>
+            </li>
+            <li class="clinic-info-item">
+              <svg class="clinic-info-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 4.5 9.5 3l2 4-2 1.5a12 12 0 0 0 6 6l1.5-2 4 2-1.5 2.5c-.7 1.2-2.1 1.7-3.4 1.2C10.7 16.5 7.5 13.3 5.3 8c-.5-1.3 0-2.7 1.2-3.5Z"/></svg>
+              <div><h3 data-i18n="info.phoneWhatsapp">Phone / WhatsApp</h3><p class="clinic-info-contacts"><a href="tel:+996770231813"><span data-i18n="info.call">Call</span> +996 770 231 813</a><a href="https://wa.me/996770231813" target="_blank" rel="noopener" data-i18n="info.whatsapp">WhatsApp</a></p></div>
+            </li>
+          </ul>
+        </div>
+      </section>
+
       <section class="offering-strip" aria-label="MercyMed values">
         <div class="container offering-grid">
           <article><span>01</span><h2 data-i18n="values.evidenceHeading">Evidence-based medicine</h2><p data-i18n="values.evidenceText">Clear recommendations grounded in modern medical knowledge.</p><details class="evidence-explanation"><summary data-i18n="values.evidenceLink">What does this mean?</summary><p data-i18n="values.evidenceExplanation">Medical decisions are guided by current research and international medical knowledge, rather than by tradition alone.</p></details></article>
@@ -175,6 +195,17 @@
                 </a>
               </div>
             </div>
+            <section class="opening-hours-card" aria-labelledby="opening-hours-title">
+              <div class="opening-hours-heading">
+                <svg class="clinic-info-icon" viewBox="0 0 24 24" role="img" aria-labelledby="hours-clock-title"><title id="hours-clock-title" data-i18n="info.clockIcon">Clock</title><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
+                <h3 id="opening-hours-title" data-i18n="info.openingHours">Doctor availability</h3>
+              </div>
+              <p class="opening-hours-notice"><strong data-i18n="info.todayHours">Today's doctor schedule</strong><span data-i18n="info.contactForHours">These are doctor appointment times. Please contact us to confirm clinic opening hours.</span></p>
+              <table class="opening-hours-table">
+                <thead><tr><th scope="col" data-i18n="info.day">Day</th><th scope="col" data-i18n="info.hours">Hours</th></tr></thead>
+                <tbody id="opening-hours-schedule"></tbody>
+              </table>
+            </section>
           </div>
           <div class="location-card map-location-card">
             <strong data-i18n="contact.locationTitle">Find MercyMed</strong>
