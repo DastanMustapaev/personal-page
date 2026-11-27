@@ -113,6 +113,18 @@ Object.assign(additions.KG.form, {
   requestNote: 'Команданын каалаган мүчөсүнө суроо жөнөтө аласыз. УЗИ, физиотерапия жана дуланын кызматтары адегенде дарыгер менен талкууланат; бул форма суроо жөнөтөт, кабыл алууну ырастабайт.',
   requestDoctor: 'Дарыгерге жазылуу'
 });
+Object.assign(additions.EN.form, {
+  year: 'Year', month: 'Month', day: 'Day',
+  selectYear: 'Select year', selectMonth: 'Select month', selectDay: 'Select day'
+});
+Object.assign(additions.RU.form, {
+  year: 'Год', month: 'Месяц', day: 'День',
+  selectYear: 'Выберите год', selectMonth: 'Выберите месяц', selectDay: 'Выберите день'
+});
+Object.assign(additions.KG.form, {
+  year: 'Жыл', month: 'Ай', day: 'Күн',
+  selectYear: 'Жылды тандаңыз', selectMonth: 'Айды тандаңыз', selectDay: 'Күндү тандаңыз'
+});
 Object.assign(additions.EN.contact, {
   phone: '+996 770 231 813',
   email: 'medicalcenter@mercymed.kg',
@@ -195,6 +207,7 @@ function updateLanguage(language) {
     const value = getValue(currentLanguage, element.dataset.i18n);
     if (value !== undefined) element.innerHTML = value;
   });
+  populateBirthdateMonths();
   document.querySelectorAll('[data-translation-badge]').forEach((badge) => {
     badge.textContent = translations[currentLanguage].badge;
   });
@@ -227,7 +240,9 @@ document.querySelectorAll('.site-nav a').forEach((link) => link.addEventListener
 
 const form = document.querySelector('#appointment-form');
 const formMessage = document.querySelector('#form-message');
-const birthdateInput = document.querySelector('#birthdate');
+const birthYearInput = document.querySelector('#birth-year');
+const birthMonthInput = document.querySelector('#birth-month');
+const birthDayInput = document.querySelector('#birth-day');
 const doctorSelect = document.querySelector('#doctor');
 document.querySelectorAll('.services-list details').forEach((details) => {
   const summary = details.querySelector('summary');
@@ -296,7 +311,51 @@ document.querySelectorAll('[data-booking-doctor]').forEach((link) => {
 });
 const today = new Date();
 const todayString = `${today.getFullYear()}-${String(today.getMonth() + 1).padStart(2, '0')}-${String(today.getDate()).padStart(2, '0')}`;
-birthdateInput?.setAttribute('max', todayString);
+const recentYears = document.createElement('optgroup');
+recentYears.label = `2000–${today.getFullYear()}`;
+const earlierYears = document.createElement('optgroup');
+earlierYears.label = '1900–1999';
+for (let year = 2000; year <= today.getFullYear(); year += 1) {
+  recentYears.append(new Option(String(year), String(year)));
+}
+for (let year = 1999; year >= 1900; year -= 1) {
+  earlierYears.append(new Option(String(year), String(year)));
+}
+birthYearInput?.append(recentYears, earlierYears);
+
+function populateBirthdateMonths() {
+  if (!birthMonthInput) return;
+  const selectedMonth = birthMonthInput.value;
+  const locale = { EN: 'en', RU: 'ru', KG: 'ky' }[currentLanguage];
+  const monthOptions = Array.from({ length: 12 }, (_, index) => {
+    const month = String(index + 1).padStart(2, '0');
+    const label = new Intl.DateTimeFormat(locale, { month: 'long', timeZone: 'UTC' })
+      .format(new Date(Date.UTC(2000, index, 1)));
+    return new Option(label, month);
+  });
+  birthMonthInput.replaceChildren(birthMonthInput.options[0], ...monthOptions);
+  birthMonthInput.value = selectedMonth;
+}
+
+function updateBirthDays() {
+  if (!birthDayInput) return;
+  const selectedDay = birthDayInput.value;
+  const year = Number(birthYearInput?.value);
+  const month = Number(birthMonthInput?.value);
+  const maxDay = year && month ? new Date(year, month, 0).getDate() : 31;
+  birthDayInput.replaceChildren(
+    birthDayInput.options[0],
+    ...Array.from({ length: maxDay }, (_, index) => {
+      const day = String(index + 1).padStart(2, '0');
+      return new Option(String(index + 1), day);
+    })
+  );
+  birthDayInput.value = selectedDay;
+}
+
+birthYearInput?.addEventListener('change', updateBirthDays);
+birthMonthInput?.addEventListener('change', updateBirthDays);
+updateBirthDays();
 
 const isValidBirthdate = (value) => {
   if (!/^\d{4}-\d{2}-\d{2}$/.test(value)) return false;
@@ -323,23 +382,24 @@ form?.addEventListener('submit', (event) => {
   const requiredFields = [...form.querySelectorAll('[required]')];
   const missingField = requiredFields.find((field) => !field.value.trim());
   if (missingField) {
-    formMessage.textContent = translations[currentLanguage].form.missing[missingField.id];
+    formMessage.textContent = translations[currentLanguage].form.missing[missingField.dataset.validationId || missingField.id];
     formMessage.className = 'form-message error';
     missingField.setAttribute('aria-invalid', 'true');
     missingField.focus();
     return;
   }
   const data = new FormData(form);
-  if (!isValidBirthdate(data.get('birthdate'))) {
+  const birthdate = `${birthYearInput.value}-${birthMonthInput.value}-${birthDayInput.value}`;
+  if (!isValidBirthdate(birthdate)) {
     formMessage.textContent = translations[currentLanguage].form.invalidDate;
     formMessage.className = 'form-message error';
-    birthdateInput?.focus();
+    birthDayInput?.focus();
     return;
   }
-  if (data.get('birthdate') > todayString) {
+  if (birthdate > todayString) {
     formMessage.textContent = translations[currentLanguage].form.futureDate;
     formMessage.className = 'form-message error';
-    birthdateInput?.focus();
+    birthYearInput?.focus();
     return;
   }
   if (!isValidPhone(data.get('phone'))) {
@@ -355,7 +415,7 @@ form?.addEventListener('submit', (event) => {
   const message = translations[currentLanguage].form.whatsappMessage
     .replace('{name}', data.get('name'))
     .replace('{surname}', data.get('surname'))
-    .replace('{birthdate}', data.get('birthdate'))
+    .replace('{birthdate}', birthdate)
     .replace('{phone}', data.get('phone'))
     .replace('{doctor}', doctor);
   formMessage.innerHTML = `<strong>${translations[currentLanguage].form.awaitingReview}</strong><br>${translations[currentLanguage].form.awaitingReviewText}`;

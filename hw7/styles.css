@@ -42,6 +42,9 @@ footer{background:var(--dark);border-top-color:var(--dark);color:#fff}
 .map-link:hover{border-color:var(--orange-dark)}
 @media(max-width:720px){.mobile-cta{display:block}.menu-toggle{margin-left:auto}.brand-art{height:350px}.portrait-art{height:130px}}
 @media(max-width:720px){.map-frame{height:340px}.map-links{display:grid;grid-template-columns:1fr 1fr}.map-link{padding:10px 8px;font-size:.78rem}}
+.visually-hidden{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+.birthdate-fields{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px}
+.birthdate-fields select{min-width:0;padding:11px 8px}
 .services-list .plus{display:inline-block;transition:transform .32s ease}
 .services-list details[open] .plus{transform:rotate(45deg)}
 @media(prefers-reduced-motion:reduce){.services-list .plus{transition:none}}
