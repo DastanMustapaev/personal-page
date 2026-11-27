@@ -42,6 +42,9 @@ footer{background:var(--dark);border-top-color:var(--dark);color:#fff}
 .map-link:hover{border-color:var(--orange-dark)}
 @media(max-width:720px){.mobile-cta{display:block}.menu-toggle{margin-left:auto}.brand-art{height:350px}.portrait-art{height:130px}}
 @media(max-width:720px){.map-frame{height:340px}.map-links{display:grid;grid-template-columns:1fr 1fr}.map-link{padding:10px 8px;font-size:.78rem}}
+.services-list .plus{display:inline-block;transition:transform .32s ease}
+.services-list details[open] .plus{transform:rotate(45deg)}
+@media(prefers-reduced-motion:reduce){.services-list .plus{transition:none}}
 @media(max-width:720px){.service-specialists{grid-template-columns:1fr}.details-content{padding-right:12px}}
 .contact-links a{min-height:62px;gap:12px;padding:10px 14px;font-size:.88rem;font-weight:600;overflow-wrap:anywhere}
 .contact-icon-wrap{display:grid;place-items:center;flex:0 0 38px;width:38px;height:38px;border:1px solid var(--line);border-radius:50%;background:#fff;color:var(--orange-dark)}

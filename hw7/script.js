@@ -229,6 +229,49 @@ const form = document.querySelector('#appointment-form');
 const formMessage = document.querySelector('#form-message');
 const birthdateInput = document.querySelector('#birthdate');
 const doctorSelect = document.querySelector('#doctor');
+document.querySelectorAll('.services-list details').forEach((details) => {
+  const summary = details.querySelector('summary');
+  const content = details.querySelector('.details-content');
+  if (!summary || !content) return;
+
+  let isOpen = details.open;
+  let animation;
+  summary.addEventListener('click', (event) => {
+    event.preventDefault();
+    const startHeight = details.open ? content.getBoundingClientRect().height : 0;
+    const startOpacity = details.open
+      ? Number.parseFloat(getComputedStyle(content).opacity)
+      : 0;
+    animation?.cancel();
+    isOpen = !isOpen;
+    if (isOpen) details.open = true;
+
+    if (typeof content.animate !== 'function') {
+      details.open = isOpen;
+      return;
+    }
+
+    const currentAnimation = content.animate(
+      [
+        { height: `${startHeight}px`, opacity: startOpacity },
+        { height: `${isOpen ? content.scrollHeight : 0}px`, opacity: Number(isOpen) }
+      ],
+      {
+        duration: matchMedia('(prefers-reduced-motion: reduce)').matches ? 0 : 320,
+        easing: 'ease',
+        fill: 'both'
+      }
+    );
+    animation = currentAnimation;
+    currentAnimation.onfinish = () => {
+      if (animation !== currentAnimation) return;
+      if (!isOpen) details.open = false;
+      currentAnimation.cancel();
+      animation = null;
+    };
+  });
+});
+
 const nameInputs = form?.querySelectorAll('#name, #surname') ?? [];
 const invalidNameCharacters = /[^\p{L}\p{M} '\u2019-]/gu;
 
